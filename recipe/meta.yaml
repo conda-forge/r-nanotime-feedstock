@@ -28,6 +28,7 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - make
 
   host:
     - r-base
