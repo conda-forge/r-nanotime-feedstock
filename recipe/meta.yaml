@@ -1,4 +1,4 @@
-{% set version = '0.3.0' %}
+{% set version = '0.3.2' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nanotime_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nanotime/nanotime_{{ version }}.tar.gz
-  sha256: 1cd57b91e9cfb614d3731b952843b2afd39bb09b4cf564148e8fe3358a6b5395
+  sha256: 9ef53c3bca01b605a9519190117988e170e63865327007c90b05d31fe7f22b1d
 
 build:
   merge_build_host: True  # [win]
@@ -28,17 +28,18 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - make
 
   host:
     - r-base
-    - r-rcppcctz >=0.2.3
+    - r-rcppcctz >=0.2.9
     - r-rcppdate
     - r-bit64
     - r-zoo
 
   run:
     - r-base
-    - r-rcppcctz >=0.2.3
+    - r-rcppcctz >=0.2.9
     - r-rcppdate
     - r-bit64
     - r-zoo
