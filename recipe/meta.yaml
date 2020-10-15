@@ -28,7 +28,12 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
-    - make
+    - make                             # [not win]
+    - m2-make                          # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
 
   host:
     - r-base
