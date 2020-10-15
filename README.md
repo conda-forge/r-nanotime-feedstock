@@ -3,13 +3,11 @@ About r-nanotime
 
 Home: https://CRAN.R-project.org/package=nanotime
 
-Package license: GPL2
+Package license: GPL-2.0-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-nanotime-feedstock/blob/master/LICENSE.txt)
 
 Summary: Full 64-bit resolution date and time support with resolution up to nanosecond granularity is provided, with easy transition to and from the standard 'POSIXct' type.
-
-
 
 Current build status
 ====================
