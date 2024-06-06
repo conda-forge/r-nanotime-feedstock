@@ -32,6 +32,9 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-rcpp                       # [build_platform != target_platform]
+    - r-rcppcctz >=0.2.9           # [build_platform != target_platform]
+    - r-rcppdate                   # [build_platform != target_platform]
   host:
     - r-base
     - r-rcpp
@@ -47,6 +50,7 @@ requirements:
     - r-rcppdate
     - r-bit64
     - r-zoo
+
 test:
   commands:
     - $R -e "library('nanotime')"           # [not win]
