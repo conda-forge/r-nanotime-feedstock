@@ -3,22 +3,24 @@ About r-nanotime-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-nanotime-feedstock/blob/main/LICENSE.txt)
 
+
 About r-nanotime
 ----------------
 
-Home: https://CRAN.R-project.org/package=nanotime
+Home: https://github.com/eddelbuettel/nanotime, https://eddelbuettel.github.io/nanotime/, https://dirk.eddelbuettel.com/code/nanotime.html
 
 Package license: GPL-2.0-or-later
 
-Summary: Full 64-bit resolution date and time support with resolution up to nanosecond granularity is provided, with easy transition to and from the standard 'POSIXct' type.
+Summary: Full 64-bit resolution date and time functionality with nanosecond granularity is provided, with easy transition to and from the standard 'POSIXct' type. Three additional classes offer interval, period and duration functionality for nanosecond-resolution timestamps.
+
 About r-nanotime
 ----------------
 
-Home: https://CRAN.R-project.org/package=nanotime
+Home: https://github.com/eddelbuettel/nanotime, https://eddelbuettel.github.io/nanotime/, https://dirk.eddelbuettel.com/code/nanotime.html
 
 Package license: GPL-2.0-or-later
 
-Summary: Full 64-bit resolution date and time support with resolution up to nanosecond granularity is provided, with easy transition to and from the standard 'POSIXct' type.
+Summary: Full 64-bit resolution date and time functionality with nanosecond granularity is provided, with easy transition to and from the standard 'POSIXct' type. Three additional classes offer interval, period and duration functionality for nanosecond-resolution timestamps.
 
 Current build status
 ====================
@@ -195,7 +197,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
@@ -245,5 +247,6 @@ Feedstock Maintainers
 
 * [@conda-forge/r](https://github.com/conda-forge/r/)
 * [@ihnorton](https://github.com/ihnorton/)
+* [@jdblischak](https://github.com/jdblischak/)
 * [@shelnutt2](https://github.com/shelnutt2/)
 
