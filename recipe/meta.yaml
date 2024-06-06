@@ -1,5 +1,4 @@
-{% set version = "0.3.7" %}
-
+{% set version = '0.3.7' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -14,38 +13,41 @@ source:
   sha256: a771782653aef62a071682907fd7bd611f7f98fc80beda227d619aae166ccb15
 
 build:
-  merge_build_host: true  # [win]
-  # If this is a new build for the same version, increment the build number.
-  number: 1
-  # no skip
-
-  # This is required to make R link correctly on Linux.
+  merge_build_host: True  # [win]
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
 
-# Suggests: RUnit, data.table, xts
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
-    - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ stdlib("c") }}
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
-
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-rcpp                       # [build_platform != target_platform]
+    - r-rcppcctz >=0.2.9           # [build_platform != target_platform]
+    - r-rcppdate                   # [build_platform != target_platform]
+    - r-bit64                      # [build_platform != target_platform]
+    - r-zoo                        # [build_platform != target_platform]
   host:
     - r-base
+    - r-rcpp
     - r-rcppcctz >=0.2.9
     - r-rcppdate
     - r-bit64
     - r-zoo
-
   run:
     - r-base
+    - {{ native }}gcc-libs         # [win]
+    - r-rcpp
     - r-rcppcctz >=0.2.9
     - r-rcppdate
     - r-bit64
@@ -53,49 +55,24 @@ requirements:
 
 test:
   commands:
-    # You can put additional test commands to be run here.
     - $R -e "library('nanotime')"           # [not win]
     - "\"%R%\" -e \"library('nanotime')\""  # [win]
 
-  # You can also put a file called run_test.py, run_test.sh, or run_test.bat
-  # in the recipe that will be run at test time.
-
-  # requires:
-    # Put any additional test requirements here.
-
 about:
-  home: https://CRAN.R-project.org/package=nanotime
-  summary: Full 64-bit resolution date and time support with resolution up to nanosecond granularity is provided, with easy transition to and from the standard 'POSIXct' type.
+  home: https://github.com/eddelbuettel/nanotime, https://eddelbuettel.github.io/nanotime/,
+    https://dirk.eddelbuettel.com/code/nanotime.html
   license: GPL-2.0-or-later
-  license_family: GPL
+  summary: Full 64-bit resolution date and time functionality with nanosecond granularity is
+    provided, with easy transition to and from the standard 'POSIXct' type. Three additional
+    classes offer interval, period and duration functionality for nanosecond-resolution
+    timestamps.
+  license_family: GPL2
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
     - ihnorton
     - shelnutt2
     - conda-forge/r
-
-# The original CRAN metadata for this package was:
-
-# Package: nanotime
-# Type: Package
-# Title: Nanosecond-Resolution Time for R
-# Version: 0.2.4
-# Date: 2019-05-25
-# Author: Dirk Eddelbuettel and Leonardo Silvestri
-# Maintainer: Dirk Eddelbuettel <edd@debian.org>
-# Description: Full 64-bit resolution date and time support with resolution up to nanosecond granularity is provided, with easy transition to and from the standard 'POSIXct' type.
-# Imports: methods, bit64, RcppCCTZ (>= 0.2.3), zoo
-# Suggests: RUnit, data.table, xts
-# License: GPL (>= 2)
-# RoxygenNote: 6.1.1
-# NeedsCompilation: no
-# Packaged: 2019-05-25 11:42:08.614561 UTC; edd
-# Repository: CRAN
-# Date/Publication: 2019-05-25 22:40:21 UTC
-
-# See
-# https://docs.conda.io/projects/conda-build for
-# more information about meta.yaml
+    - jdblischak
