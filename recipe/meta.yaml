@@ -35,6 +35,8 @@ requirements:
     - r-rcpp                       # [build_platform != target_platform]
     - r-rcppcctz >=0.2.9           # [build_platform != target_platform]
     - r-rcppdate                   # [build_platform != target_platform]
+    - r-bit64                      # [build_platform != target_platform]
+    - r-zoo                        # [build_platform != target_platform]
   host:
     - r-base
     - r-rcpp
