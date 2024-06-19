@@ -1,4 +1,4 @@
-{% set version = '0.3.7' %}
+{% set version = "0.3.8" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nanotime_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nanotime/nanotime_{{ version }}.tar.gz
-  sha256: a771782653aef62a071682907fd7bd611f7f98fc80beda227d619aae166ccb15
+  sha256: 61ca16ebf602b5f8be70bf4589735716e52345a2e5ab4a714853e48d1011a52f
 
 build:
-  merge_build_host: True  # [win]
-  number: 3
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -59,13 +59,9 @@ test:
     - "\"%R%\" -e \"library('nanotime')\""  # [win]
 
 about:
-  home: https://github.com/eddelbuettel/nanotime, https://eddelbuettel.github.io/nanotime/,
-    https://dirk.eddelbuettel.com/code/nanotime.html
+  home: https://github.com/eddelbuettel/nanotime, https://eddelbuettel.github.io/nanotime/, https://dirk.eddelbuettel.com/code/nanotime.html
   license: GPL-2.0-or-later
-  summary: Full 64-bit resolution date and time functionality with nanosecond granularity is
-    provided, with easy transition to and from the standard 'POSIXct' type. Three additional
-    classes offer interval, period and duration functionality for nanosecond-resolution
-    timestamps.
+  summary: Full 64-bit resolution date and time functionality with nanosecond granularity is provided, with easy transition to and from the standard 'POSIXct' type. Three additional classes offer interval, period and duration functionality for nanosecond-resolution timestamps.
   license_family: GPL2
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
