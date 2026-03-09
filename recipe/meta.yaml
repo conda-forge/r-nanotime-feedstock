@@ -1,4 +1,4 @@
-{% set version = "0.3.12" %}
+{% set version = "0.3.13" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nanotime_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nanotime/nanotime_{{ version }}.tar.gz
-  sha256: fb511779777f69d2e1729e7de0fad6de86ab30a28738dff0524dffeb31f3eba4
+  sha256: 09e1d3943c2c908732a6f459b1a0af6381969d23ab841168d21198d4f29991af
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
