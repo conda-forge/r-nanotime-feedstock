@@ -12,7 +12,7 @@ source:
   sha256: 09e1d3943c2c908732a6f459b1a0af6381969d23ab841168d21198d4f29991af
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -30,21 +30,21 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
-    - r-rcpp                       # [build_platform != target_platform]
+    - r-rcpp >=1.1.1               # [build_platform != target_platform]
     - r-rcppcctz >=0.2.9           # [build_platform != target_platform]
     - r-rcppdate                   # [build_platform != target_platform]
     - r-bit64                      # [build_platform != target_platform]
     - r-zoo                        # [build_platform != target_platform]
   host:
     - r-base
-    - r-rcpp
+    - r-rcpp >=1.1.1
     - r-rcppcctz >=0.2.9
     - r-rcppdate
     - r-bit64
     - r-zoo
   run:
     - r-base
-    - r-rcpp
+    - r-rcpp >=1.1.1
     - r-rcppcctz >=0.2.9
     - r-rcppdate
     - r-bit64
