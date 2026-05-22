@@ -7,20 +7,24 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-nanotime-feed
 About r-nanotime
 ----------------
 
-Home: https://github.com/eddelbuettel/nanotime, https://eddelbuettel.github.io/nanotime/, https://dirk.eddelbuettel.com/code/nanotime.html
+Home: https://eddelbuettel.github.io/nanotime/, https://dirk.eddelbuettel.com/code/nanotime.html
 
 Package license: GPL-2.0-or-later
 
 Summary: Full 64-bit resolution date and time functionality with nanosecond granularity is provided, with easy transition to and from the standard 'POSIXct' type. Three additional classes offer interval, period and duration functionality for nanosecond-resolution timestamps.
+
+Development: https://github.com/eddelbuettel/nanotime
 
 About r-nanotime
 ----------------
 
-Home: https://github.com/eddelbuettel/nanotime, https://eddelbuettel.github.io/nanotime/, https://dirk.eddelbuettel.com/code/nanotime.html
+Home: https://eddelbuettel.github.io/nanotime/, https://dirk.eddelbuettel.com/code/nanotime.html
 
 Package license: GPL-2.0-or-later
 
 Summary: Full 64-bit resolution date and time functionality with nanosecond granularity is provided, with easy transition to and from the standard 'POSIXct' type. Three additional classes offer interval, period and duration functionality for nanosecond-resolution timestamps.
+
+Development: https://github.com/eddelbuettel/nanotime
 
 Current build status
 ====================
